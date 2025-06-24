@@ -54,7 +54,7 @@ user_input=st.text_area("Enter a sentence")
 if st.button("Detect language"):
     if user_input.strip()=="":
         print("Eneter some text")
-    else
+    else:
         try:
             input_vector=vector.transform([user_input])
             output=model.predict(input_vector)
