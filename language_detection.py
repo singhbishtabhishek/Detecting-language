@@ -25,7 +25,7 @@ model.fit(X_train, y_train)
 
 # Streamlit UI
 st.set_page_config(page_title="Language Detection", layout='centered')
-st.title("🌐 Detect Language from Text")
+st.title("Detect Language from Text")
 
 user_input = st.text_area("Enter a sentence:")
 
