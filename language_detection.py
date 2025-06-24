@@ -1,3 +1,4 @@
+import streamlit as st
 import pandas as pd
 import numpy as np
 
@@ -42,7 +43,7 @@ user_input=st.text_area("Enter a sentence")
 
 if st.button("Detect language"):
     if user_input.strip()=="":
-        print("Eneter some text")
+        st.warning("Eneter some text")
     else:
         try:
             input_vector=vector.transform([user_input])
