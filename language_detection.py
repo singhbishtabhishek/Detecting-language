@@ -36,6 +36,6 @@ if st.button("Detect language"):
         try:
             input_vector = vectorizer.transform([user_input])
             prediction = model.predict(input_vector)
-            st.success(f"✅ Predicted language: **{prediction[0]}**")
+            st.success(f" Predicted language: **{prediction[0]}**")
         except Exception as e:
-            st.error(f"❌ Error: {e}")
+            st.error(f" Error: {e}")
