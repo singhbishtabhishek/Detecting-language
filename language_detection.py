@@ -3,13 +3,6 @@ import numpy as np
 
 data=pd.read_csv('languages_file.csv')
 
-data
-
-data['language'].value_counts()
-
-#checking for null value and solving taht
-data.isnull().sum()
-
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
@@ -18,13 +11,11 @@ from sklearn.naive_bayes import MultinomialNB
 Text_to_array=np.array(data['Text'])
 Language_to_array=np.array(data['language'])
 
-print(Text_to_array)
-print(Language_to_array)
-
 Text=Text_to_array
 Language=Language_to_array
 
 #Converting the text arary to numbers [step before feedign the values to machine]
+
 TN=CountVectorizer()
 Text=TN.fit_transform(Text)
 
@@ -33,13 +24,13 @@ Text_train,Text_test,Language_train,Language_test=train_test_split(Text,Language
 print(Text)
 
 #start building model
+
 model=MultinomialNB()
 model.fit(Text_train,Language_train)
 
-print(model.score(Text_test,Language_test))
-
 User=input("Enter a Text: ")
 data=TN.transform([User]).toarray()
+
 output=model.predict(data)
 print(output)
 
