@@ -7,8 +7,6 @@ data
 
 data['language'].value_counts()
 
-print(data[data['language']=='Hindi'])
-
 #checking for null value and solving taht
 data.isnull().sum()
 
